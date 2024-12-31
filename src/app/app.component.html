@@ -1,0 +1,15 @@
+<div>
+  @for (monkey of monkeys; track monkey) {
+    <span >{{ monkey.hasEyesOpen ? '🙉' : '🙈' }}</span>
+  }
+  <br />
+  <button>Add monkey</button>
+</div>
+
+<!-- 1. Use event binding so that when clicking the button a new monkey is added -->
+<!-- 2. Use event binding so that when hovering on a monkey its eyes open -->
+
+<!-- TIP1: No need to change anything outside of this file except for the bonus -->
+<!-- TIP2: Use the mouseenter event for opening the eyes on hovering -->
+
+<!-- BONUS: Close the eyes of the monkey when not hovering anymore -->
