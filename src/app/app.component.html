@@ -1,9 +1,9 @@
 <div>
   @for (monkey of monkeys; track monkey) {
-    <span >{{ monkey.hasEyesOpen ? '🙉' : '🙈' }}</span>
+    <span (mouseenter)="openEyes(monkey)" (mouseleave)="closeEyes(monkey)">{{ monkey.hasEyesOpen ? '🙉' : '🙈' }}</span>
   }
   <br />
-  <button>Add monkey</button>
+  <button (click)="addMonkey()">Add monkey</button>
 </div>
 
 <!-- 1. Use event binding so that when clicking the button a new monkey is added -->
