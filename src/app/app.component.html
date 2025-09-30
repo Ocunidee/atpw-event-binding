@@ -1,5 +1,5 @@
 <div>
-  @for (monkey of monkeys; track monkey) {
+  @for (monkey of monkeys(); track $index) {
     <span >{{ monkey.hasEyesOpen ? '🙉' : '🙈' }}</span>
   }
   <br />

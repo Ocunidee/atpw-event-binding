@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, signal, WritableSignal } from '@angular/core'
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import { Component } from '@angular/core'
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  monkeys: Monkey[] = [{ hasEyesOpen: false }]
+  protected readonly monkeys: WritableSignal<Monkey[]> = signal([{ hasEyesOpen: false }])
 
   addMonkey() {
-    this.monkeys.push({ hasEyesOpen: false })
+    this.monkeys.update(value => [...value, { hasEyesOpen: false }])
   }
 
   openEyes(monkey: Monkey) {
@@ -19,5 +19,5 @@ export class AppComponent {
 }
 
 interface Monkey {
-  hasEyesOpen: boolean;
+  hasEyesOpen: boolean
 }
