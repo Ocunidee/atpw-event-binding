@@ -16,6 +16,10 @@ export class AppComponent {
   openEyes(monkey: Monkey) {
     monkey.hasEyesOpen = true
   }
+
+  closeEyes(monkey: Monkey) {
+    monkey.hasEyesOpen = false
+  }
 }
 
 interface Monkey {
